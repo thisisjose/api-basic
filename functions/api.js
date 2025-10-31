@@ -7,7 +7,10 @@ exports.handler = async (event, context) => {
 
   return {
     statusCode: 200,
-    headers: { "Content-Type": "application/json" },
+    headers: { 
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*" // ← Esto permite que tu PWA haga fetch
+    },
     body: JSON.stringify(data)
   };
 };
